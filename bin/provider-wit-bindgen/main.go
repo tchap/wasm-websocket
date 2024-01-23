@@ -3,30 +3,22 @@ package main
 import (
 	"flag"
 	"fmt"
+	"go/format"
 	"io/fs"
 	"log"
 	"os"
-	"path/filepath"
 	"strings"
 
 	wit "github.com/patrickhuber/go-wasm/wit/parse"
+	"github.com/tchap/wamcloud-websocket/bin/provider-with-bindgen/internal/generator"
 )
 
 const witFileExtension = ".wit"
 
 func main() {
 	flagIn := flag.String("in", "wit", "input WIT directory to process")
-	flagOut := flag.String("out", "gen", "output directory to write generated files into")
 	flag.Parse()
 
-	args := flag.Args()
-	if len(args) != 1 {
-		flag.Usage()
-		os.Exit(1)
-	}
-
-	goPackageBasename := args[0]
-	outputRoot := *flagOut
 	rootFS := os.DirFS(*flagIn)
 
 	if err := fs.WalkDir(rootFS, ".", func(path string, dir os.DirEntry, err error) error {
@@ -50,7 +42,14 @@ func main() {
 		}
 
 		// Generate output packages.
-		return generatePackage(filepath.SplitList(goPackageBasename), filepath.SplitList(outputRoot), pkgAST)
+		out := generator.FormatFile(generator.BuildFile(pkgAST))
+		out, err = format.Source(out)
+		if err != nil {
+			return err
+		}
+
+		fmt.Println(string(out))
+		return nil
 	}); err != nil {
 		log.Fatalln(err)
 	}
