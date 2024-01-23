@@ -1,0 +1,4 @@
+github.com/patrickhuber/go-types v0.5.0 h1:d74ahmYzGsnbiEJ+9MtWKl8inV47JAVEQlNTmi+ROa0=
+github.com/patrickhuber/go-types v0.5.0/go.mod h1:fkCDj9+Mfd2t7x0vb8EQywoa1vhBp+G8AW7M5kz7rnc=
+github.com/patrickhuber/go-wasm v0.0.0-20240111194632-20c854ff61b2 h1:O6ib5QPA7kCJ0xMqdNB2M5IR1Z7MJXC9NQ+9/+Ok584=
+github.com/patrickhuber/go-wasm v0.0.0-20240111194632-20c854ff61b2/go.mod h1:LrX1V7TkqqsArVndFPaLOWKJkpWiPY6j7ZbNv2BGLAE=
