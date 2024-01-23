@@ -36,8 +36,8 @@ type ArgNode struct {
 }
 
 type MethodNode struct {
-	TypeName    string
-	Name        string
-	Args        []ArgNode
-	ReturnTypes []string
+	InterfaceName string
+	Name          string
+	Args          []ArgNode
+	ReturnType    string
 }

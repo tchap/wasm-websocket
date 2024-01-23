@@ -48,6 +48,9 @@ func buildStructNode(iface *ast.Interface) (StructNode, []EnumNode, []RecordNode
 
 		case *ast.Record:
 			records = append(records, buildRecordNode(ifaceName, item))
+
+		case *ast.FuncItem:
+			node.Methods = append(node.Methods, buildMethod(ifaceName, item))
 		}
 	}
 	return node, enums, records
@@ -78,6 +81,26 @@ func buildRecordNode(interfaceName string, record *ast.Record) RecordNode {
 		})
 	}
 	return node
+}
+
+func buildMethod(interfaceName string, m *ast.FuncItem) MethodNode {
+	return MethodNode{
+		InterfaceName: interfaceName,
+		Name:          convertName(m.ID),
+		Args:          buildArgsFromParams(m.FuncType.Params),
+		ReturnType:    convertType(m.FuncType.Results.Anonymous),
+	}
+}
+
+func buildArgsFromParams(params []ast.Parameter) []ArgNode {
+	out := make([]ArgNode, len(params))
+	for i, param := range params {
+		out[i] = ArgNode{
+			Name: param.Id,
+			Type: convertType(param.Type),
+		}
+	}
+	return out
 }
 
 func convertName(name string) string {

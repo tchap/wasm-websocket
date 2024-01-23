@@ -51,4 +51,21 @@ func formatFile(b *bytes.Buffer, file File) {
 		}
 		fmt.Fprintln(b, "}")
 	}
+
+	// Structs
+	for _, node := range file.Structs {
+		fmt.Fprintf(b, "\ntype %s struct {\n", node.Name)
+		fmt.Fprintf(b, "\tp *provider.WasmcloudProvider\n")
+		fmt.Fprintln(b, "}")
+
+		fmt.Fprintf(b, "\nfunc New%s(p *provider.WasmcloudProvider) *%s {\n", node.Name, node.Name)
+		fmt.Fprintf(b, "\treturn &%s{p: p}\n", node.Name)
+		fmt.Fprintln(b, "}")
+
+		for _, method := range node.Methods {
+			fmt.Fprintf(b, "\nfunc (self *%s) %s(", node.Name, method.Name)
+			fmt.Fprintf(b, ") %s {\n", method.ReturnType)
+			fmt.Fprintln(b, "}")
+		}
+	}
 }
