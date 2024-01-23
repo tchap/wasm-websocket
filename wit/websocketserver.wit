@@ -1,13 +1,13 @@
-package tchap:websocketserver@0.1.0
+package tchap:websocketserver@0.1.0;
 
 interface types {
-    enum message-type {
+    enum message-kind {
         text,
         binary,
     }
 
     record websocket-message {
-        type: message-type,
+        kind: message-kind,
         body: option<list<u8>>,
     }
 }
