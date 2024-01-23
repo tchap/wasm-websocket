@@ -64,6 +64,12 @@ func formatFile(b *bytes.Buffer, file File) {
 
 		for _, method := range node.Methods {
 			fmt.Fprintf(b, "\nfunc (self *%s) %s(", node.Name, method.Name)
+			if len(method.Args) > 0 {
+				fmt.Fprintf(b, "%s %s", method.Args[0].Name, method.Args[0].Type)
+				for _, arg := range method.Args[1:] {
+					fmt.Fprintf(b, ", %s %s", arg.Name, arg.Type)
+				}
+			}
 			fmt.Fprintf(b, ") %s {\n", method.ReturnType)
 			fmt.Fprintln(b, "}")
 		}
