@@ -1,3 +1,3 @@
-module github.com/tchap/wasm-websocket
+module github.com/tchap/wasmcloud-websocket
 
 go 1.21.6
