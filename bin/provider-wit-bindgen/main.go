@@ -15,7 +15,7 @@ import (
 const witFileExtension = ".wit"
 
 func main() {
-	flagWIT := flag.String("wit", "wit", "WIT directory to process")
+	flagIn := flag.String("in", "wit", "input WIT directory to process")
 	flagOut := flag.String("out", "gen", "output directory to write generated files into")
 	flag.Parse()
 
@@ -27,7 +27,7 @@ func main() {
 
 	goPackageBasename := args[0]
 	outputRoot := *flagOut
-	rootFS := os.DirFS(*flagWIT)
+	rootFS := os.DirFS(*flagIn)
 
 	if err := fs.WalkDir(rootFS, ".", func(path string, dir os.DirEntry, err error) error {
 		// Skip files that do not have the right extension.
