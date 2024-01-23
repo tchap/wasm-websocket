@@ -44,13 +44,13 @@ func main() {
 		}
 
 		// Parse the content.
-		witAST, err := wit.Parse(string(content))
+		pkgAST, err := wit.Parse(string(content))
 		if err != nil {
 			return err
 		}
 
 		// Generate output packages.
-		return generate(filepath.SplitList(goPackageBasename), path, outputRoot, witAST)
+		return generatePackage(filepath.SplitList(goPackageBasename), filepath.SplitList(outputRoot), pkgAST)
 	}); err != nil {
 		log.Fatalln(err)
 	}
