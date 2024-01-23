@@ -1,0 +1,19 @@
+package tchap:websocketserver@0.1.0
+
+interface types {
+    enum message-type {
+        text,
+        binary,
+    }
+
+    record websocket-message {
+        type: message-type,
+        body: option<list<u8>>,
+    }
+}
+
+interface handler {
+    use types.{websocket-message};
+
+    handle-message: func(message: websocket-message) -> option<websocket-message>;
+}
