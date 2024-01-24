@@ -1,7 +1,7 @@
 package websocketserver
 
 import (
-	"github.com/tchap/wasmcloud-websocket/bin/provider-wit-bindgen/internal/rpc/types"
+	"github.com/tchap/wasmcloud-websocket/bin/provider-wit-bindgen/rpc/types"
 	provider "github.com/wasmCloud/provider-sdk-go"
 	msgpack "github.com/wasmcloud/tinygo-msgpack"
 )
