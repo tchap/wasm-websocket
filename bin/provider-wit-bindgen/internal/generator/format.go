@@ -71,7 +71,7 @@ func formatFile(b *bytes.Buffer, file File) {
 				}
 			}
 			fmt.Fprintf(b, ") %s {\n", method.ReturnType)
-			fmt.Fprintln(b, "}")
+			fmt.Fprintln(b, "panic(\"not implemented\")}")
 		}
 	}
 }

@@ -129,7 +129,8 @@ func convertName(name string) string {
 func convertType(t ast.Type) string {
 	switch t := t.(type) {
 	case *ast.Option:
-		return fmt.Sprintf("types.Option[%s]", convertType(t.Type))
+		ot := convertType(t.Type)
+		return fmt.Sprintf("types.Option[%s, *%s]", ot, ot)
 
 	case *ast.List:
 		switch it := t.Type.(type) {
