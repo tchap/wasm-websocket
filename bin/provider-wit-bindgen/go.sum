@@ -1,8 +1,16 @@
+github.com/creack/pty v1.1.9/go.mod h1:oKZEueFk5CKHvIhNR5MUki03XCEU+Q6VDXinZuGJ33E=
+github.com/kr/pretty v0.3.1 h1:flRD4NNwYAUpkphVc1HcthR4KEIFJ65n8Mw5qdRn3LE=
+github.com/kr/pretty v0.3.1/go.mod h1:hoEshYVHaxMs3cyo3Yncou5ZscifuDolrwPKZanG3xk=
+github.com/kr/text v0.2.0 h1:5Nx0Ya0ZqY2ygV366QzturHI13Jq95ApcVaJBhpS+AY=
+github.com/kr/text v0.2.0/go.mod h1:eLer722TekiGuMkidMxC/pM04lWEeraHUUmBw8l2grE=
 github.com/patrickhuber/go-types v0.5.0 h1:d74ahmYzGsnbiEJ+9MtWKl8inV47JAVEQlNTmi+ROa0=
 github.com/patrickhuber/go-types v0.5.0/go.mod h1:fkCDj9+Mfd2t7x0vb8EQywoa1vhBp+G8AW7M5kz7rnc=
 github.com/patrickhuber/go-wasm v0.0.0-20240111194632-20c854ff61b2 h1:O6ib5QPA7kCJ0xMqdNB2M5IR1Z7MJXC9NQ+9/+Ok584=
 github.com/patrickhuber/go-wasm v0.0.0-20240111194632-20c854ff61b2/go.mod h1:LrX1V7TkqqsArVndFPaLOWKJkpWiPY6j7ZbNv2BGLAE=
+github.com/pkg/diff v0.0.0-20210226163009-20ebb0f2a09e/go.mod h1:pJLUxLENpZxwdsKMEsNbx1VGcRFpLqf3715MtcvvzbA=
 github.com/pkg/errors v0.9.1 h1:FEBLx1zS214owpjy7qsBeixbURkuhQAwrK5UwLGTwt4=
 github.com/pkg/errors v0.9.1/go.mod h1:bwawxfHBFNV+L2hUp1rHADufV3IMtnDRdf1r5NINEl0=
+github.com/rogpeppe/go-internal v1.9.0 h1:73kH8U+JUqXU8lRuOHeVHaa/SZPifC7BkcraZVejAe8=
+github.com/rogpeppe/go-internal v1.9.0/go.mod h1:WtVeX8xhTBvf0smdhujwtBcq4Qrzq/fJaraNFVN+nFs=
 github.com/wasmcloud/tinygo-msgpack v0.1.4 h1:jhZ0txnn+WiOuUCpulDjC7nHHpAaaxElF+KgXXYu3DA=
 github.com/wasmcloud/tinygo-msgpack v0.1.4/go.mod h1:VqjkQtxp6pkww69P2+OrvYhUHVpxczpATQKWbWA9WEU=

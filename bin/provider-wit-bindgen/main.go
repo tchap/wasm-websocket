@@ -43,12 +43,13 @@ func main() {
 
 		// Generate output packages.
 		out := generator.FormatFile(generator.BuildFile(pkgAST))
-		out, err = format.Source(out)
+		outFmt, err := format.Source(out)
 		if err != nil {
+			fmt.Println(string(out))
 			return err
 		}
 
-		fmt.Println(string(out))
+		fmt.Println(string(outFmt))
 		return nil
 	}); err != nil {
 		log.Fatalln(err)

@@ -2,9 +2,11 @@ package generator
 
 import (
 	"fmt"
+	"reflect"
 	"strings"
 	"unicode"
 
+	"github.com/kr/pretty"
 	"github.com/patrickhuber/go-wasm/wit/ast"
 )
 
@@ -15,6 +17,9 @@ func BuildFile(pkg *ast.Ast) File {
 			{
 				Alias: "provider",
 				Path:  "github.com/wasmCloud/provider-sdk-go",
+			},
+			{
+				Path: "github.com/tchap/wasmcloud-websocket/bin/provider-wit-bindgen/internal/rpc/types",
 			},
 		},
 	}
@@ -123,5 +128,25 @@ func convertName(name string) string {
 }
 
 func convertType(t ast.Type) string {
+	pretty.Println(t)
+	switch t := t.(type) {
+	case *ast.Option:
+		return fmt.Sprintf("types.Option[%s]", convertType(t.Type))
+
+	case *ast.List:
+		switch it := t.Type.(type) {
+		case *ast.U8:
+			return fmt.Sprintf("types.Bytes")
+
+		case *ast.Id:
+			switch it.Value {
+			case "u8":
+				return fmt.Sprintf("types.Bytes")
+			}
+
+		default:
+			return fmt.Sprintf("types.Option[%T]", reflect.TypeOf(it))
+		}
+	}
 	return fmt.Sprintf("%T", t)
 }
