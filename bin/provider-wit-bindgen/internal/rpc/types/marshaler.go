@@ -7,7 +7,7 @@ type MMarshaler interface {
 }
 
 type MUnmarshaler interface {
-	MDecode(d *msgpack.Decoder) error
+	MDecode(d msgpack.Decoder) error
 }
 
 type MMsg[T any] interface {

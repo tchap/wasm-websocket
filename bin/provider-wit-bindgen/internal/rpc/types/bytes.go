@@ -11,7 +11,7 @@ func (b Bytes) MEncode(w msgpack.Writer) error {
 	return w.CheckError()
 }
 
-func (b *Bytes) MDecode(d *msgpack.Decoder) error {
+func (b *Bytes) MDecode(d msgpack.Decoder) error {
 	bs, err := d.ReadByteArray()
 	if err != nil {
 		return err

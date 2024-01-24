@@ -10,7 +10,7 @@ import (
 	"strings"
 
 	wit "github.com/patrickhuber/go-wasm/wit/parse"
-	"github.com/tchap/wamcloud-websocket/bin/provider-with-bindgen/internal/generator"
+	"github.com/tchap/wasmcloud-websocket/bin/provider-wit-bindgen/internal/generator"
 )
 
 const witFileExtension = ".wit"

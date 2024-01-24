@@ -17,7 +17,7 @@ func (opt *Option[T, M]) MEncode(w msgpack.Writer) error {
 	return opt.Value.MEncode(w)
 }
 
-func (opt *Option[T, M]) MDecode(d *msgpack.Decoder) error {
+func (opt *Option[T, M]) MDecode(d msgpack.Decoder) error {
 	n, err := d.ReadMapSize()
 	if err != nil {
 		return err
