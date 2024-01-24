@@ -4,3 +4,5 @@ github.com/patrickhuber/go-wasm v0.0.0-20240111194632-20c854ff61b2 h1:O6ib5QPA7k
 github.com/patrickhuber/go-wasm v0.0.0-20240111194632-20c854ff61b2/go.mod h1:LrX1V7TkqqsArVndFPaLOWKJkpWiPY6j7ZbNv2BGLAE=
 github.com/pkg/errors v0.9.1 h1:FEBLx1zS214owpjy7qsBeixbURkuhQAwrK5UwLGTwt4=
 github.com/pkg/errors v0.9.1/go.mod h1:bwawxfHBFNV+L2hUp1rHADufV3IMtnDRdf1r5NINEl0=
+github.com/wasmcloud/tinygo-msgpack v0.1.4 h1:jhZ0txnn+WiOuUCpulDjC7nHHpAaaxElF+KgXXYu3DA=
+github.com/wasmcloud/tinygo-msgpack v0.1.4/go.mod h1:VqjkQtxp6pkww69P2+OrvYhUHVpxczpATQKWbWA9WEU=
