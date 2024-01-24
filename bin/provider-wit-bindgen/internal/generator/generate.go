@@ -6,7 +6,6 @@ import (
 	"strings"
 	"unicode"
 
-	"github.com/kr/pretty"
 	"github.com/patrickhuber/go-wasm/wit/ast"
 )
 
@@ -128,7 +127,6 @@ func convertName(name string) string {
 }
 
 func convertType(t ast.Type) string {
-	pretty.Println(t)
 	switch t := t.(type) {
 	case *ast.Option:
 		return fmt.Sprintf("types.Option[%s]", convertType(t.Type))
