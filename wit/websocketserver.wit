@@ -12,7 +12,7 @@ interface types {
     }
 }
 
-interface handler {
+interface web-socket-server {
     use types.{websocket-message};
 
     handle-message: func(message: websocket-message) -> option<websocket-message>;
